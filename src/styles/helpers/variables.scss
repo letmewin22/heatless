@@ -1,0 +1,43 @@
+:root {
+  //bg
+  --bg-main: #12141d;
+  --bg-card: #1e2029;
+  --bg-accent: #0176ff;
+  --bg-pill: #183254;
+  --bg-badge: #0176ff;
+  //field
+  --field-default: #1e2029;
+  --field-hover: #2f313d;
+  //alert
+  --alert-success: #23b053;
+  --alert-error: #e34b4b;
+  //typ
+  --typ-primary: #ffffff;
+  --typ-body: #bbc0c5;
+  --typ-link: #397eff;
+  --typ-pill: #0176ff;
+  --typ-badge: #ffffff;
+  --typ-accent: #397eff;
+  //nav
+  --nav-active: #ffffff;
+  --nav-default: #858a8f;
+  //icons
+  --icons-accent: #377dff;
+  --icons-default: #ffffff;
+  //btn
+  --btn-primary: #0176ff;
+  --btn-faded: #0d54a9;
+  --btn-secondary: #12141d;
+}
+
+//screen config
+$maxWidth: 1920;
+$minWidth: 320;
+
+//breakpoints
+$uls: 2100px;
+$ls: 1400px;
+$br1: 1216px;
+$br2: 960px;
+$br3: 760px;
+$br4: 460px;

@@ -1,0 +1,40 @@
+.in-text-table__container {
+  @include media('>#{$br2}') {
+    max-width: 776px;
+    margin: 0 auto;
+  }
+}
+
+.in-text-table__title {
+  margin-bottom: 24px;
+}
+
+.in-text-table__table-wrapper {
+  @include media('<=#{$br2}') {
+    position: relative;
+    overflow: auto;
+    width: 100vw;
+  }
+}
+
+.in-text-table__table {
+  width: 776px;
+  thead tr {
+    background-color: #2e313b !important;
+  }
+  th {
+    text-align: left;
+    padding: 18px 24px;
+  }
+  tr {
+    &:nth-of-type(odd) {
+      background-color: var(--bg-card);
+    }
+    &:nth-of-type(even) {
+      background-color: #2e313b;
+    }
+  }
+  td {
+    padding: 18px 24px;
+  }
+}

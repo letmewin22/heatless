@@ -1,0 +1,30 @@
+.container {
+  width: 1216px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include media('<=#{$br1}') {
+    width: 100%;
+    padding-left: 57px;
+    padding-right: 57px;
+  }
+  @include media('<=#{$br3}') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  @include media('<=#{$br1}') {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+  @include media('<=#{$br2}') {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+  }
+}

@@ -1,0 +1,29 @@
+.info-block-1 {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  @include media('<=#{$br2}') {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+  @include media('<=#{$br4}') {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.info-block-1__content {
+  max-width: 776px;
+  @include media('<=#{$br2}') {
+    max-width: 535px;
+  }
+}
+
+.info-block-1__text {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.6em;
+  @include media('<=#{$br2}') {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+}

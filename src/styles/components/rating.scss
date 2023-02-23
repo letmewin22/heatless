@@ -1,0 +1,21 @@
+.rating {
+  display: flex;
+  // align-items: center;
+  margin-top: 8px;
+}
+
+.rating__num {
+  display: block;
+  position: relative;
+  top: -2px;
+  margin-left: 12px;
+  font-weight: 700;
+  color: var(--typ-primary);
+  font-size: 18px;
+  @include media('<=#{$br2}') {
+    font-size: 16px;
+  }
+  @include media('<=#{$br3}') {
+    top: 0;
+  }
+}

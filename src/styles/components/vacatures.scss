@@ -1,0 +1,64 @@
+.vacatures__content {
+  max-width: 776px;
+  margin: 0 auto;
+  @include media('>#{$br4}') {
+    text-align: center;
+  }
+}
+
+.vacatures__table {
+  max-width: 976px;
+  margin: 0 auto;
+  margin-top: 44px;
+  font-size: 18px;
+}
+
+.vacatures__tr {
+  display: grid;
+  padding-left: 32px;
+  padding-right: 32px;
+  grid-template-columns: 48.77% 33.09% 18.14%;
+  @include media('<=#{$br2}') {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include media('<=#{$br3}') {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+}
+
+.vacatures__th {
+  font-weight: 700;
+  color: var(--typ-primary);
+  @include media('<=#{$br3}') {
+    display: none;
+  }
+}
+
+.vacatures__t-items {
+  margin-top: 24px;
+}
+
+.vacatures-ti {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  + .vacatures-ti {
+    margin-top: 24px;
+  }
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--bg-accent);
+    color: var(--typ-primary);
+  }
+  @include media('<=#{$br3}') {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.vacatures-ti__block--1 {
+  color: var(--typ-primary);
+}

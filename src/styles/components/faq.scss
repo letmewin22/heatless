@@ -1,0 +1,28 @@
+.faq__container {
+  @include media('>#{$br2}') {
+    max-width: 776px;
+  }
+}
+
+.faq__h2 {
+  @include media('>#{$br4}') {
+    text-align: center;
+  }
+}
+
+.faq__desc {
+  margin-top: 24px;
+  @include media('>#{$br4}') {
+    text-align: center;
+  }
+}
+
+.faq__accordeon {
+  margin-top: 44px;
+  @include media('<=#{$br2}') {
+    margin-top: 64px;
+  }
+  @include media('<=#{$br4}') {
+    margin-top: 28px;
+  }
+}

@@ -1,0 +1,27 @@
+.logos {
+  padding: 44px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @include media('<=#{$br4}') {
+    flex-wrap: wrap;
+  }
+}
+
+.logos__item {
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  + .logos__item {
+    margin-left: 24px;
+  }
+
+  @include media('<=#{$br4}') {
+    flex: 0 1 calc(33.3% - 24px);
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      margin-top: 15px;
+    }
+  }
+}

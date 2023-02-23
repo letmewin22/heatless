@@ -1,0 +1,231 @@
+.form__inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+  @include media('<=550px') {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+}
+
+textarea.form__input {
+  @include media('>550px') {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  min-height: 200px;
+  resize: none;
+}
+
+.form__bottom {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  @include media('<=#{$br2}') {
+    margin-top: 24px;
+  }
+  @include media('<=#{$br3}') {
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+.form__input {
+  background-color: var(--field-default);
+  color: var(--typ-primary);
+  padding: 13px 24px;
+  border-radius: 6px;
+  border: none;
+  font: inherit;
+  transition: border 0.2s ease, background-color 0.2s ease;
+  &:hover {
+    background-color: var(--field-hover);
+  }
+  &::placeholder {
+    color: var(--typ-body);
+  }
+}
+
+.form__message {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+  color: var(--typ-primary);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 14px 10px;
+  &--success {
+    background-color: var(--alert-success);
+  }
+  &--error {
+    background-color: var(--alert-error);
+  }
+}
+
+.input-checkbox {
+  display: none;
+}
+
+.checkbox {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+    &:first-child {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      transform: scale(1);
+      vertical-align: middle;
+      // border: 1px solid #89888a;
+      background-color: var(--field-default);
+      transition: background-color 0.5s ease;
+      svg {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        stroke: var(--icons-accent);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transition-delay: 0.1s;
+        transform: translate3d(0, 0, 0);
+        &:before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background: var(--icons-accent);
+          display: block;
+          transform: scale(0);
+          opacity: 1;
+          border-radius: 50%;
+        }
+      }
+    }
+    &:last-child {
+      padding-left: 11px;
+      line-height: 1em;
+      display: block;
+    }
+  }
+  &:hover span:first-child {
+    background-color: var(--field-hover);
+  }
+}
+
+.input-checkbox:checked + .checkbox {
+  span {
+    &:first-child {
+      animation: wave 0.4s ease;
+      svg {
+        stroke-dashoffset: 0;
+      }
+      &:before {
+        transform: scale(3.5);
+        opacity: 0;
+        transition: all 0.6s ease;
+      }
+    }
+  }
+}
+
+@keyframes wave {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+.form__btn {
+  position: relative;
+  &.loading {
+    .form__btn-loader {
+      opacity: 1;
+      visibility: visible;
+    }
+    .btn__text {
+      opacity: 0;
+    }
+  }
+  @include media('>#{$br3}') {
+    width: 210px;
+    height: 52px;
+  }
+  @include media('<=#{$br3}') {
+    margin-top: 44px;
+  }
+}
+
+$width: 25px;
+
+.form__btn-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  display: block;
+  margin: 0 auto;
+  width: $width;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: white;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

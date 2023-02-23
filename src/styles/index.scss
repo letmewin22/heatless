@@ -1,0 +1,80 @@
+@import './helpers/all.scss';
+@import './layouts.scss';
+@import './animate.scss';
+
+.e-fixed {
+  overflow: hidden !important;
+  touch-action: none;
+  -ms-touch-action: none;
+  position: relative;
+  height: 100%;
+}
+
+html {
+  overflow-y: initial;
+  overflow-x: hidden;
+  height: -webkit-fill-available;
+}
+
+body {
+  @include reg;
+  background-color: var(--bg-main);
+  color: var(--typ-body);
+  font-size: 16px;
+  line-height: 1.6em;
+  overflow-y: initial;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.quote-icon {
+  rect {
+    fill: var(--icons-accent);
+  }
+  path {
+    fill: var(--icons-default);
+  }
+}
+
+.section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  @include media('<=#{$br2}') {
+    margin-top: 54px;
+    margin-bottom: 54px;
+  }
+  @include media('<=#{$br4}') {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+  + .section {
+    margin-top: 0px;
+  }
+}
+
+.ci-items {
+  margin-top: 0px;
+}
+
+.e-img-container {
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.e-img {
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.gatsby-image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+@import './components/all.scss';

@@ -1,0 +1,59 @@
+.link {
+  color: var(--typ-link);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  @include media('>#{$br1}') {
+    &:hover {
+      .link__children {
+        &::after {
+          width: 0%;
+        }
+      }
+    }
+  }
+  @include media('<=#{$br1}') {
+    width: 100%;
+  }
+}
+
+.link__wrapper {
+  @include media('<=#{$br1}') {
+    display: inline;
+  }
+}
+
+.link__children {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  @include media('>#{$br1}') {
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      transition: width 0.3s ease;
+      background-color: var(--typ-link);
+    }
+  }
+  @include media('<=#{$br1}') {
+    display: inline;
+    line-height: 24px;
+    border-bottom: 1px solid var(--typ-link);
+  }
+}
+
+.link__arrow {
+  display: block;
+  margin-left: 12px;
+  height: 0.98em;
+  svg {
+    display: block;
+    width: 0.98em;
+    height: 0.98em;
+    path {
+      fill: var(--icons-accent);
+    }
+  }
+}

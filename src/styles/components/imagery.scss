@@ -1,0 +1,39 @@
+.imagery {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  @include media('<=#{$br2}') {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+  @include media('<=#{$br4}') {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
+
+.imagery__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  @include media('<=#{$br2}') {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+    column-gap: 20px;
+  }
+  @include media('<=#{$br4}') {
+    gap: 11px;
+  }
+}
+
+.imagery-item__img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imagery-item__img {
+  width: 100%;
+  height: 0;
+  padding-bottom: toimg(281, 280);
+  @include cover;
+}

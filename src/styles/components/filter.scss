@@ -1,0 +1,28 @@
+.filter__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 64px;
+  @include media('<=#{$br3}') {
+    justify-content: start;
+    overflow: auto;
+  }
+}
+
+.filter-item {
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+  padding: 4px 12px;
+  white-space: nowrap;
+  &.active {
+    background-color: var(--bg-pill);
+    color: var(--typ-pill);
+  }
+}
+
+.filter__item {
+  + .filter__item {
+    margin-left: 16px;
+  }
+}

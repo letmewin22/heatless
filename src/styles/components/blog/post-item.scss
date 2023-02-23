@@ -1,0 +1,62 @@
+.post-item {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding-bottom: 32px;
+  overflow: hidden;
+  @include media('<=#{$br2}') {
+    padding-bottom: 28px;
+  }
+  @include media('<=#{$br4}') {
+    padding-bottom: 24px;
+  }
+}
+
+.post-item__container {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  @include media('<=#{$br2}') {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+  }
+}
+
+.post-item__img-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.post-item__img {
+  width: 100%;
+  display: block;
+  padding-bottom: toimg(376, 262);
+  @include cover;
+}
+
+.post-item__ui {
+  display: flex;
+  align-items: center;
+}
+
+.post-item__pill {
+  margin-right: 16px;
+}
+
+.post-item__date {
+  @include media('>#{$br2}') {
+    font-size: 18px;
+  }
+}
+
+.post-item__content {
+  margin-top: 16px;
+}
+
+.post-item__text {
+  margin-top: 8px;
+}
+
+.post-item__link {
+  margin-top: 16px;
+}

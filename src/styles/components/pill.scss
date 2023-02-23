@@ -1,0 +1,12 @@
+.pill {
+  background-color: var(--bg-pill);
+  border-radius: 20px;
+  padding: 4px 12px;
+  color: var(--typ-pill);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include media('>#{$br2}') {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,33 @@
+.in-text-image {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  @include media('<=#{$br2}') {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+  @include media('<=#{$br4}') {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.in-text-image__wrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  &--default {
+    max-width: 776px;
+    margin: 0 auto;
+  }
+}
+
+.in-text-image__img {
+  width: 100%;
+  @include cover;
+  &--full {
+    padding-bottom: toimg(776, 518);
+  }
+  &--default {
+    padding-bottom: toimg(1176, 653);
+  }
+}

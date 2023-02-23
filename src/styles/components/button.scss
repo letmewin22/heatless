@@ -1,0 +1,56 @@
+.btn {
+  font: inherit;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  padding-left: 24px;
+  padding-right: 24px;
+  line-height: 1em;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
+  &--primary {
+    background-color: var(--btn-primary);
+  }
+  &--secondary {
+    background-color: var(--btn-secondary);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  @include media('<=#{$br1}') {
+    padding-left: 55px;
+    padding-right: 55px;
+    font-size: 14px;
+    line-height: 1em;
+  }
+  @include media('<=#{$br4}') {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.btn__text {
+  transition: opacity 0.25s ease;
+  flex: 1 0 auto;
+}
+
+.btn__icon {
+  display: block;
+  max-width: 100%;
+  margin-left: 16px;
+  width: 31px;
+  height: 31px;
+  flex: 0 1 auto;
+  @include media('<=#{$br1}') {
+    width: 27px;
+    height: 27px;
+  }
+}

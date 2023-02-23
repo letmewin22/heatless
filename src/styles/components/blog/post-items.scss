@@ -1,0 +1,11 @@
+.post-items__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  @include media('<=#{$br2}') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media('<=600px') {
+    grid-template-columns: 1fr;
+  }
+}

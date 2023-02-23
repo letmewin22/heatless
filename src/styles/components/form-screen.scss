@@ -1,0 +1,24 @@
+.form-screen__content {
+  max-width: 777px;
+  margin: 0 auto;
+  @include media('>#{$br4}') {
+    text-align: center;
+  }
+}
+
+.form-screen__text {
+  margin-top: 24px;
+  @include media('<=#{$br4}') {
+    margin-top: 10px;
+  }
+}
+
+.form-screen__form {
+  margin-top: 70px;
+  @include media('<=#{$br2}') {
+    margin-top: 64px;
+  }
+  @include media('<=#{$br4}') {
+    margin-top: 17px;
+  }
+}
